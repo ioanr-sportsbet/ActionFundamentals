@@ -1,0 +1,21 @@
+name: Hello World Docker Action
+description: Hands-on action using docker container to greet and output invocation time
+author: GitHub Actions
+
+# Define your inputs here.
+inputs:
+  who-to-greet:
+    description: Who to greet
+    required: true
+    default: World
+
+# Define your outputs here.
+outputs:
+  time:
+    description: The time when greeting took place
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.who-to-greet }}
